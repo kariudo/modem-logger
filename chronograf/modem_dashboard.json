@@ -1,0 +1,651 @@
+{
+	"meta": {
+		"chronografVersion": "1.8.8",
+		"sources": {
+			"0": {
+				"name": "http://influxdb:8086",
+				"link": "/chronograf/v1/sources/0"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "4",
+		"cells": [
+			{
+				"i": "2e300f4d-1dd7-4a11-bdb0-6a7da2b593c3",
+				"x": 6,
+				"y": 4,
+				"w": 3,
+				"h": 4,
+				"name": "Correctables Delta",
+				"queries": [
+					{
+						"query": "SELECT difference(mean(\"codewords_correctable\")) AS \"correctable\" FROM \"modem\".\"autogen\".\"cablemodem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"direction\"='downstream' GROUP BY time(5m) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT difference(mean(\"codewords_correctable\")) AS \"correctable\" FROM \"modem\".\"autogen\".\"cablemodem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"direction\"='downstream' GROUP BY time(5m) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Change (5 min)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "bar",
+				"colors": [
+					{
+						"id": "ec93dac6-0c60-47ae-ad5a-f51c3a240385",
+						"type": "scale",
+						"hex": "#FDC44F",
+						"name": "Cthulhu",
+						"value": "0"
+					},
+					{
+						"id": "edaeee61-cb86-4447-8b67-b9819ac33b9f",
+						"type": "scale",
+						"hex": "#007C76",
+						"name": "Cthulhu",
+						"value": "0"
+					},
+					{
+						"id": "fde4039b-6c68-4674-861d-b4638c7466ed",
+						"type": "scale",
+						"hex": "#8983FF",
+						"name": "Cthulhu",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/2e300f4d-1dd7-4a11-bdb0-6a7da2b593c3"
+				}
+			},
+			{
+				"i": "c6724795-8870-456b-95b7-9a929eb3a04c",
+				"x": 9,
+				"y": 4,
+				"w": 3,
+				"h": 4,
+				"name": "Uncorrectables Delta",
+				"queries": [
+					{
+						"query": "SELECT difference(mean(\"codewords_uncorrectable\")) AS \"uncorrectable\" FROM \"modem\".\"autogen\".\"cablemodem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"direction\"='downstream' GROUP BY time(5m) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT difference(mean(\"codewords_uncorrectable\")) AS \"uncorrectable\" FROM \"modem\".\"autogen\".\"cablemodem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"direction\"='downstream' GROUP BY time(5m) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Change (5 min)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "bar",
+				"colors": [
+					{
+						"id": "67a23a03-ebff-499e-92b2-a39a8d48a158",
+						"type": "scale",
+						"hex": "#8F8AF4",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "c1918932-c4a7-47a0-8034-8f7c558f690d",
+						"type": "scale",
+						"hex": "#A51414",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "773e8336-beb9-4b40-ab1b-f1b8aa8646a9",
+						"type": "scale",
+						"hex": "#F4CF31",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/c6724795-8870-456b-95b7-9a929eb3a04c"
+				}
+			},
+			{
+				"i": "f045ca4f-0b5f-43b2-9fc6-6939abde7e0f",
+				"x": 0,
+				"y": 4,
+				"w": 6,
+				"h": 4,
+				"name": "Downstream Power",
+				"queries": [
+					{
+						"query": "SELECT abs(mean(\"power\")) AS \"absolute_mean_power\" FROM \"modem\".\"autogen\".\"cablemodem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"direction\"='downstream' GROUP BY time(:interval:), \"channel\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT abs(mean(\"power\")) AS \"absolute_mean_power\" FROM \"modem\".\"autogen\".\"cablemodem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"direction\"='downstream' GROUP BY time(:interval:), \"channel\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Power",
+						"prefix": "-",
+						"suffix": " dBmV",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "8450fce9-5c8e-488e-a334-42c3f44ce820",
+						"type": "scale",
+						"hex": "#DA6FF1",
+						"name": "Ectoplasm",
+						"value": "0"
+					},
+					{
+						"id": "e8246b08-6d46-4b80-b680-b8f9217be427",
+						"type": "scale",
+						"hex": "#00717A",
+						"name": "Ectoplasm",
+						"value": "0"
+					},
+					{
+						"id": "40e501a2-2986-47de-8166-1b7369d466ef",
+						"type": "scale",
+						"hex": "#ACFF76",
+						"name": "Ectoplasm",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/f045ca4f-0b5f-43b2-9fc6-6939abde7e0f"
+				}
+			},
+			{
+				"i": "be6d5cc4-0357-47b0-b109-18860e12190f",
+				"x": 0,
+				"y": 0,
+				"w": 6,
+				"h": 4,
+				"name": "Downstream",
+				"queries": [
+					{
+						"query": "SELECT mean(\"snr\") AS \"mean_snr\" FROM \"modem\".\"autogen\".\"cablemodem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"direction\"='downstream' GROUP BY time(:interval:), \"channel\", \"direction\" FILL(null)",
+						"queryConfig": {
+							"database": "modem",
+							"measurement": "cablemodem",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_snr",
+									"args": [
+										{
+											"value": "snr",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"direction": [
+									"downstream"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": [
+									"channel",
+									"direction"
+								]
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/0",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "SNR",
+						"prefix": "-",
+						"suffix": "dB",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "493801f3-469c-42d0-b6e9-e0d68ac4a412",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "8164a229-8719-4ee7-8396-0656e915d488",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0290f3d9-89bc-4e54-b6ff-01ec77e63bb1",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/be6d5cc4-0357-47b0-b109-18860e12190f"
+				}
+			},
+			{
+				"i": "107ea1e6-7105-4be1-8ac0-8cd024ca8646",
+				"x": 6,
+				"y": 0,
+				"w": 6,
+				"h": 4,
+				"name": "Upstream",
+				"queries": [
+					{
+						"query": "SELECT mean(\"power\") AS \"mean_power\" FROM \"modem\".\"autogen\".\"cablemodem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"direction\"='upstream' GROUP BY time(1m), \"channel\", \"direction\" FILL(null)",
+						"queryConfig": {
+							"database": "modem",
+							"measurement": "cablemodem",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_power",
+									"args": [
+										{
+											"value": "power",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"direction": [
+									"upstream"
+								]
+							},
+							"groupBy": {
+								"time": "1m",
+								"tags": [
+									"channel",
+									"direction"
+								]
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/0",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Power",
+						"prefix": "",
+						"suffix": "dB",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "493801f3-469c-42d0-b6e9-e0d68ac4a412",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "8164a229-8719-4ee7-8396-0656e915d488",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0290f3d9-89bc-4e54-b6ff-01ec77e63bb1",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/107ea1e6-7105-4be1-8ac0-8cd024ca8646"
+				}
+			}
+		],
+		"templates": [],
+		"name": "Modem",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/4",
+			"cells": "/chronograf/v1/dashboards/4/cells",
+			"templates": "/chronograf/v1/dashboards/4/templates"
+		}
+	}
+}
