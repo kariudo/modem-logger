@@ -1,16 +1,18 @@
 version: "3.4"
 
 services:
-  netgearparser:
-    image: netgearparser
+  modem-logger:
+    image: kariudo/modem-logger:latest
     network_mode: bridge
-    container_name: NetgearParser
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    container_name: modem-logger
+    # build:
+    #   context: .
+    #   dockerfile: ./Dockerfile
     environment:
         MODEM_PASSWORD: password
         INFLUX_URL: "http://influxdb:8086"
         INFLUX_DB: modem
         FREQUENCY_MINUTES: 1
+    # depends_on:
+    #   - influxdb
         
