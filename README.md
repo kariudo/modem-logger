@@ -15,6 +15,8 @@ There are 4 required environment variables that default as below:
 
 ### Docker
 
+Available [on docker hub](https://hub.docker.com/r/kariudo/modem-logger).
+
 Can be built and run directy using the `dockerfile`, or using the provided `docker-compose.yml` either itself or as a template.
 
 Best to share a stack with your `influxdb` container for the easiest configuration over the bridge.
@@ -28,3 +30,5 @@ Can be run directly with :
 ## Cronograf
 
 An example dashboard json for cronograf is included.
+
+![screenshot](https://github.com/kariudo/modem-logger/blob/master/chronograf/chronograf_screenshot.png?raw=true)
