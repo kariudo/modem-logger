@@ -1,5 +1,7 @@
 # Modem Logger
 
+> Note: I no longer have cable (long live fiber), so this project is not really maintained anymore; however, it worked at my last testing before switching off cable. If you have an issue I will do my best to help when I can, but I have no way to collect live data off my hardware anymore.
+
 Parses the data returned by the Netgear CM500 status page to collect data for logging to InfluxDB.
 
 ## Usage
